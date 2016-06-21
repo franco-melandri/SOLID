@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRP", "SRP\SRP.csproj", "{A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCP", "OCP\OCP.csproj", "{D145D059-E9EF-451D-9638-AFFCC9746A92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSP", "LSPù\LSP.csproj", "{9E50A7B2-B295-4E14-A0E6-3F5DCC14AF66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D145D059-E9EF-451D-9638-AFFCC9746A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D145D059-E9EF-451D-9638-AFFCC9746A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D145D059-E9EF-451D-9638-AFFCC9746A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E50A7B2-B295-4E14-A0E6-3F5DCC14AF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E50A7B2-B295-4E14-A0E6-3F5DCC14AF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E50A7B2-B295-4E14-A0E6-3F5DCC14AF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E50A7B2-B295-4E14-A0E6-3F5DCC14AF66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
