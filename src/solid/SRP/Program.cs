@@ -10,57 +10,91 @@ namespace SRP
     {
         static void Main(string[] args)
         {
-            var shapes = new IShape[]
+            var shapes = new Shape[]
             {
                 new Square(5),
-                new Circle(5),
-                new Rectangle(5, 6)
+                new Circle(5)
             };
 
             var area = new AreaCalculator(shapes);
+            //Console.WriteLine(area.Show());
+
             var areaOutpu = new AreaCalculatorOutput(area);
 
             Console.WriteLine(areaOutpu.ShowHtml());
             Console.WriteLine(areaOutpu.ShowJson());
             Console.WriteLine(areaOutpu.ShowXml());
-            
+
+
             Console.ReadKey();
         }
     }
 
 
-    //public class AreaCalculator
-    //{
-    //    private readonly IShape[] shapes;
-
-    //    public AreaCalculator(IShape[] shapes)
-    //    {
-    //        this.shapes = shapes;
-    //    }
-
-    //    public float Sum()
-    //    {
-    //        return shapes.Sum(s => s.GetArea());
-    //    }
-
-    //    public string Show()
-    //    {
-    //        return string.Format("<div>{0}</div>", Sum());
-    //    }
-    //}
-
     public class AreaCalculator
     {
-        private readonly IShape[] shapes;
-
-        public AreaCalculator(IShape[] shapes)
+        private readonly Shape[] shapes;
+        public AreaCalculator(Shape[] shapes)
         {
             this.shapes = shapes;
         }
-
         public float Sum()
         {
-            return shapes.Sum(s => s.GetArea());
+            float sum = 0;
+            foreach (var s in shapes)
+            {
+                var square = s as Square;
+                if (square != null)
+                {
+                    sum += square.GetLenght() * square.GetLenght();
+                }
+
+                var circle = s as Circle;
+                if (circle != null)
+                {
+                    sum += (float)(circle.GetRadious() * circle.GetRadious() * Math.PI);
+                }
+            }
+            return sum;
+        }
+
+        //public string Show()
+        //{
+        //    return string.Format("<div>{0}</div>", Sum());
+        //}
+    }
+
+    public class Shape
+    {
+    }
+
+    public class Square : Shape
+    {
+        private readonly float length;
+
+        public Square(float length)
+        {
+            this.length = length;
+        }
+
+        public float GetLenght()
+        {
+            return length;
+        }
+    }
+
+    public class Circle : Shape
+    {
+        private readonly float radious;
+
+        public Circle(float radious)
+        {
+            this.radious = radious;
+        }
+
+        public float GetRadious()
+        {
+            return radious;
         }
     }
 
@@ -89,55 +123,4 @@ namespace SRP
     }
 
 
-    public interface IShape
-    {
-        float GetArea();
-    }
-
-    public class Square : IShape
-    {
-        private readonly float length;
-
-        public Square(float length)
-        {
-            this.length = length;
-        }
-
-        public float GetArea()
-        {
-            return length*length;
-        }
-    }
-
-    public class Circle : IShape
-    {
-        private readonly float radious;
-
-        public Circle(float radious)
-        {
-            this.radious = radious;
-        }
-
-        public float GetArea()
-        {
-            return (float)(radious*radious*Math.PI);
-        }
-    }
-
-    public class Rectangle : IShape
-    {
-        private readonly float height;
-        private readonly float width;
-
-        public Rectangle(float height, float width)
-        {
-            this.height = height;
-            this.width = width;
-        }
-
-        public float GetArea()
-        {
-            return width * height;
-        }
-    }
 }
