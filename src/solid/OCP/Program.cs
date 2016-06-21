@@ -42,7 +42,7 @@ namespace OCP
 
     public class Square : IShape
     {
-        private readonly float length;
+        protected readonly float length;
 
         public Square(float length)
         {
