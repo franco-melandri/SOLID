@@ -121,6 +121,4 @@ namespace SRP
             return string.Format("<xml><area>{0}</area></xml>", areaCalculator.Sum());
         }
     }
-
-
 }
