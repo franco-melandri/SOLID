@@ -19,12 +19,11 @@ namespace SRP
             var area = new AreaCalculator(shapes);
             //Console.WriteLine(area.Show());
 
-            var areaOutpu = new AreaCalculatorOutput(area);
+            var areaOutput = new AreaCalculatorOutput(area);
 
-            Console.WriteLine(areaOutpu.ShowHtml());
-            Console.WriteLine(areaOutpu.ShowJson());
-            Console.WriteLine(areaOutpu.ShowXml());
-
+            Console.WriteLine(areaOutput.ShowHtml());
+            Console.WriteLine(areaOutput.ShowJson());
+            Console.WriteLine(areaOutput.ShowXml());
 
             Console.ReadKey();
         }
